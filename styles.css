@@ -1,0 +1,140 @@
+/* styles.css */
+@font-face {
+  font-family: 'Pragmatica-Light';
+  src: url('fonts/Pragmatica-Light.ttf') format('truetype');
+  /* Дополнительные форматы шрифта (woff, woff2) могут быть добавлены для поддержки различных браузеров */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Pragmatica-Light', sans-serif;
+}
+
+.header {
+  padding: 0px;
+  text-align: center;
+  animation: gradientAnimation 5s infinite alternate;
+  background: linear-gradient(to right, white, #a065fd);
+  background-size: 200% 400%;
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  display: inline-block;
+  margin: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  padding: 10px 20px;
+  display: inline-block;
+  position: relative;
+}
+
+.nav-links a:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #a065fd;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover:after,
+.nav-links a:active:after,
+.nav-links a:focus:after,
+.nav-links a.current:after {
+  width: 100%;
+}
+
+.page {
+  display: none;
+}
+
+.page.current {
+  display: block;
+}
+
+.landing-content {
+  max-width: 800px;
+  margin: 0 auto;
+  color: #333;
+}
+
+.block {
+  padding: 10px; /* Уменьшил отступы */
+  font-size: 25px;
+}
+
+.violet-border {
+  border: 2px solid #a065fd;
+  border-radius: 8px;
+}
+
+
+.block h1,
+.block h2 {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.block p {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.contok {
+  text-align: center;
+}
+
+ul:before{
+  content:attr(data-header);
+  font-size:120%;
+  font-weight:bold;
+  margin-left:-15px;
+}
+
+
+
+.cont {
+  text-align: center;
+}
+
+.test-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #a065fd;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  pointer-events: none; /* Чтобы сообщение не мешало взаимодействию с элементами под ним */
+}
+
+.test-message.active {
+  opacity: 1;
+  pointer-events: auto; /* Включаем взаимодействие с элементами после появления */
+}
+
+
+
+/* Анимация градиента */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
